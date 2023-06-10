@@ -13,7 +13,6 @@ type NewsItem = {
     content: string;
 }
 
-
 class Sources {
     draw(data: NewsItem[]) {
         const fragment = document.createDocumentFragment();
