@@ -35,4 +35,22 @@ interface SourcesInterface {
   sources: Array<NewsType>
 }
 
-export {NewsType, SourcesType, NewsInterface, SourcesInterface}
+
+interface LoaderErrorHandler {
+  ok: boolean;
+  status: number,
+  statusText: string;
+  json(): void;
+}
+
+type GCallback<T> = (data?: T) => void;
+
+type GSources<T> = {sources: T};
+
+interface LoaderEndpoint<T> {
+  endpoint: string;
+  options: GSources<T>;
+}
+
+
+export {NewsType, SourcesType, NewsInterface, SourcesInterface, LoaderEndpoint, LoaderErrorHandler, GCallback, GSources}

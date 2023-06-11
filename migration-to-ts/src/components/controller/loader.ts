@@ -1,18 +1,4 @@
-interface LoaderErrorHandler {
-    ok: boolean;
-    status: number,
-    statusText: string;
-    json(): void;
-}
-
-type GCallback<T> = (data?: T) => void;
-
-type GSources<T> = {sources: T};
-
-interface LoaderEndpoint<T> {
-    endpoint: string;
-    options: GSources<T>;
-  }
+import {LoaderErrorHandler, LoaderEndpoint, GCallback, GSources } from '../../types'
 
 enum ErrorStatus {
     Unauthorized = 401,
