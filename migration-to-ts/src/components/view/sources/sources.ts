@@ -1,24 +1,12 @@
 import './sources.css';
-
-type NewsItem = {
-    // source: { id: string, name: string };
-    id: string;
-    name: string
-    author: string;
-    title: string;
-    description: string;
-    url: string;
-    urlToImage: string;
-    publishedAt: string;
-    content: string;
-}
+import {SourcesType} from '../../../types/index'
 
 class Sources {
-    draw(data: NewsItem[]) {
+    draw(data: SourcesType[]) {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;;
 
-        data.forEach((item: NewsItem): void => {
+        data.forEach((item: SourcesType): void => {
             const sourceClone = sourceItemTemp!.content.cloneNode(true) as HTMLTemplateElement;
             sourceClone.querySelector('.source__item-name')!.textContent = item.name;
             sourceClone.querySelector('.source__item')!.setAttribute('data-source-id', item.id);
