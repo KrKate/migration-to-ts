@@ -1,15 +1,17 @@
 import './news.css';
 import {NewsType} from '../../../types/index'
 
+type NewsPick = Pick<NewsType, 'title' | 'description' | 'url' | 'urlToImage' | 'author' | 'name' | 'publishedAt'>;
+
 // https://newsapi.org/docs/endpoints/top-headlines
 class News {
-    draw(data: NewsType[]): void {
-        const news = data.length >= 10 ? data.filter((_item: NewsType, idx: number) => idx < 10) : data;
+    draw(data: NewsPick[]): void {
+        const news = data.length >= 10 ? data.filter((_item: NewsPick, idx: number) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-        news.forEach((item: NewsType, idx: number): void => {
+        news.forEach((item: NewsPick, idx: number): void => {
             const newsClone = newsItemTemp.content.cloneNode(true) as Element;
 
             if (idx % 2)

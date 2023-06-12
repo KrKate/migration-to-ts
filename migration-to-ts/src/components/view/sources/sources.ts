@@ -4,7 +4,7 @@ import {SourcesType} from '../../../types/index'
 class Sources {
     draw(data: SourcesType[]) {
         const fragment = document.createDocumentFragment();
-        const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;;
+        const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
         data.forEach((item: SourcesType): void => {
             const sourceClone = sourceItemTemp!.content.cloneNode(true) as HTMLTemplateElement;
