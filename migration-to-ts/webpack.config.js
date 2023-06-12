@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-    entry: path.resolve(__dirname, './src'),
+    entry: path.resolve(__dirname, './src/index'),
     mode: 'development',
     module: {
         rules: [
@@ -37,6 +37,11 @@ const baseConfig = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
+            inject: 'body',
+            scriptLoading: 'blocking',
+            templateParameters: {
+              env: process.env.NODE_ENV === 'production' ? '' : '//localhost:8080',
+            },
         }),
         new CleanWebpackPlugin(),
     ],
