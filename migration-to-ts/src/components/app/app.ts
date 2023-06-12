@@ -12,7 +12,7 @@ class App {
         this.view = new AppView();
     }
 
-    start(): void {
+    public start(): void {
         const sourcesElement = document.querySelector('.sources');
         if (sourcesElement) {
             sourcesElement.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data as NewsInterface)));

@@ -7,7 +7,7 @@ enum Endpoint {
 }
 
 class AppController extends AppLoader {
-    getSources(callback: GCallback<SourcesInterface>) {
+    public getSources(callback: GCallback<SourcesInterface>) {
         super.getResp(
             {
                 endpoint: Endpoint.Sources,
@@ -16,7 +16,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: GCallback<NewsInterface>): void {
+    public getNews(e: Event, callback: GCallback<NewsInterface>): void {
         let target = e.target as HTMLElement | null;
         const newsContainer: HTMLElement = e.currentTarget as HTMLElement;
 

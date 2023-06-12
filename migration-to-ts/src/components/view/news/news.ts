@@ -5,7 +5,7 @@ type NewsPick = Pick<NewsType, 'title' | 'description' | 'url' | 'urlToImage' | 
 
 // https://newsapi.org/docs/endpoints/top-headlines
 class News {
-    draw(data: NewsPick[]): void {
+    public draw(data: NewsPick[]): void {
         const news = data.length >= 10 ? data.filter((_item: NewsPick, idx: number) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();

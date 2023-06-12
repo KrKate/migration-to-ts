@@ -16,7 +16,7 @@ class Loader {
         this.options = options;
     }
 
-    getResp<T>(
+    public getResp<T>(
         { endpoint, options }: LoaderEndpoint<T>,
         callback = () => {
             console.error('No callback for GET response');
@@ -26,7 +26,7 @@ class Loader {
     }
 
 // ok, status, statusText=message  https://newsapi.org/docs/errors
-    errorHandler(res: LoaderErrorHandler): LoaderErrorHandler {
+    private errorHandler(res: LoaderErrorHandler): LoaderErrorHandler {
         if (!res.ok) {
             if (res.status === ErrorStatus.Unauthorized || res.status === ErrorStatus.NotFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -35,7 +35,7 @@ class Loader {
         return res;
     }
 
-    makeUrl<T>(options: GSources<T> | undefined, endpoint: string) {
+    private makeUrl<T>(options: GSources<T> | undefined, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -47,7 +47,7 @@ class Loader {
     }
 
 // json()
-    load<T>(method: string, endpoint: string, callback: GCallback<T>, options: GSources<T> | undefined) {
+    private load<T>(method: string, endpoint: string, callback: GCallback<T>, options: GSources<T> | undefined) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
