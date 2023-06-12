@@ -31,7 +31,7 @@ interface NewsInterface {
 }
 
 interface SourcesInterface {
-  status: string;
+  status?: string;
   sources: Array<NewsType>
 }
 
@@ -49,7 +49,7 @@ type GSources<T> = {sources: T};
 
 interface LoaderEndpoint<T> {
   endpoint: string;
-  options: GSources<T>;
+  options?: GSources<T>;
 }
 
 
