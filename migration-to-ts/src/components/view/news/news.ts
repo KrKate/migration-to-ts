@@ -3,7 +3,7 @@ import {NewsType} from '../../../types/index'
 
 type NewsPick = Pick<NewsType, 'title' | 'description' | 'url' | 'urlToImage' | 'author' | 'name' | 'publishedAt'>;
 
-// https://newsapi.org/docs/endpoints/top-headlines
+
 class News {
     public draw(data: NewsPick[]): void {
         const news = data.length >= 10 ? data.filter((_item: NewsPick, idx: number) => idx < 10) : data;

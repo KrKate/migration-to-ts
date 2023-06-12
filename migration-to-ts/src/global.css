@@ -13,11 +13,16 @@ header h1 {
     font-weight: 800;
 }
 
+main {
+    display: flex;
+}
+
 footer {
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 footer .copyright {
     font-size: 14px;
@@ -32,4 +37,29 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+
+.footer-github {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 0 10px;
+    background-color: #fff;
+}
+
+.footer-rsschool {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 0 10px;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ @media (max-width:860px) {
+    main {
+       flex-direction: column;
+    }
 }
