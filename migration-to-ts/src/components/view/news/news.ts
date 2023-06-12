@@ -9,15 +9,15 @@ class News {
         const news = data.length >= 10 ? data.filter((_item: NewsPick, idx: number) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
-        const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
+        const newsItemTemp = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
 
         news.forEach((item: NewsPick, idx: number): void => {
-            const newsClone = newsItemTemp.content.cloneNode(true) as Element;
+            const newsClone = <Element>newsItemTemp.content.cloneNode(true);
 
             if (idx % 2)
                 newsClone.querySelector('.news__item')?.classList.add('alt');
 
-            const newsMetaPhoto = newsClone.querySelector('.news__meta-photo') as HTMLElement;
+            const newsMetaPhoto = <HTMLElement>newsClone.querySelector('.news__meta-photo');
             newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
             newsClone.querySelector('.news__meta-author')!.textContent = item.author || item.name;
             newsClone.querySelector('.news__meta-date')!.textContent = item.publishedAt

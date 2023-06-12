@@ -6,12 +6,12 @@ enum ErrorStatus {
 }
 
 class Loader {
-    baseLink: string;
+    readonly baseLink: string;
 
     // Типы расширения (urlOptions) можно создавать только из типов объектов, options нельзя присвоить просто string
-    options: { apiKey: string };
+    readonly options: { apiKey: string };
 
-    constructor(baseLink: string, options: { apiKey: string }) {
+    constructor(baseLink: string, options: {readonly apiKey: string }) {
         this.baseLink = baseLink;
         this.options = options;
     }
