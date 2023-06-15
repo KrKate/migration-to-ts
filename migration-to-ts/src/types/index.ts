@@ -1,5 +1,4 @@
 type NewsType = {
-    // source: { id: string, name: string };
     id: string,
     name: string
     author: string;
@@ -12,7 +11,6 @@ type NewsType = {
   };
 
 type SourcesType = {
-    // source: { id: string, name: string };
     id: string;
     name: string
     author: string;
@@ -52,5 +50,6 @@ interface LoaderEndpoint<T> {
   options?: GSources<T>;
 }
 
+type NewsPick = Pick<NewsType, 'title' | 'description' | 'url' | 'urlToImage' | 'author' | 'name' | 'publishedAt'>;
 
-export {NewsType, SourcesType, NewsInterface, SourcesInterface, LoaderEndpoint, LoaderErrorHandler, GCallback, GSources}
+export {NewsType, SourcesType, NewsInterface, SourcesInterface, LoaderEndpoint, LoaderErrorHandler, GCallback, GSources, NewsPick}
