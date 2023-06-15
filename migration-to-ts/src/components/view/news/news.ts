@@ -1,8 +1,5 @@
 import './news.css';
-import {NewsType} from '../../../types/index'
-
-type NewsPick = Pick<NewsType, 'title' | 'description' | 'url' | 'urlToImage' | 'author' | 'name' | 'publishedAt'>;
-
+import {NewsPick} from '../../../types/index'
 
 class News {
     public draw(data: NewsPick[]): void {

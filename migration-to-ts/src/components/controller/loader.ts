@@ -1,9 +1,5 @@
 import {LoaderErrorHandler, LoaderEndpoint, GCallback, GSources } from '../../types'
-
-enum ErrorStatus {
-    Unauthorized = 401,
-    NotFound = 404
-}
+import { ErrorStatus } from '../../enums/enums';
 
 class Loader {
     readonly baseLink: string;
