@@ -20,7 +20,6 @@ class Loader {
         this.load('GET', endpoint, callback, options);
     }
 
-// ok, status, statusText=message  https://newsapi.org/docs/errors
     private errorHandler(res: LoaderErrorHandler): LoaderErrorHandler {
         if (!res.ok) {
             if (res.status === ErrorStatus.Unauthorized || res.status === ErrorStatus.NotFound)

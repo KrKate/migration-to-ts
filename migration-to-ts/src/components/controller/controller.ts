@@ -14,14 +14,15 @@ class AppController extends AppLoader {
     }
 
     public getNews(e: Event, callback: GCallback<NewsInterface>): void {
-        let target = e.target as HTMLElement | null;
-        const newsContainer: HTMLElement = e.currentTarget as HTMLElement;
+        let target = e.target instanceof HTMLElement ? e.target : null;
+        const currentTarget = e.currentTarget instanceof HTMLElement ? e.currentTarget : null;;
+        const newsContainer: HTMLElement | null = currentTarget;
 
         while (target !== newsContainer) {
-            if ((target as HTMLElement).classList.contains('source__item')) {
-                const sourceId = (target as HTMLElement).getAttribute('data-source-id') as string;
-                if ((newsContainer).getAttribute('data-source') !== sourceId) {
-                    (newsContainer).setAttribute('data-source', sourceId);
+            if (target instanceof HTMLElement && target.classList.contains('source__item')) {
+                const sourceId = target.getAttribute('data-source-id') as string;
+                if ((newsContainer)!.getAttribute('data-source') !== sourceId) {
+                    (newsContainer)!.setAttribute('data-source', sourceId);
                     super.getResp(
                         {
                             endpoint: Endpoint.everything,
