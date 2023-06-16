@@ -15,6 +15,33 @@ header h1 {
 
 main {
     display: flex;
+    justify-content: space-around;
+}
+
+.news-container, .buttons-container {
+    overflow-y: scroll;
+    width: 40%;
+    height: 90vh;
+    padding-right: 20px;
+}
+
+
+.buttons-container::-webkit-scrollbar, .news-container::-webkit-scrollbar {
+    width: 15px;
+    box-sizing: border-box;
+}
+
+.buttons-container::-webkit-scrollbar-track, .news-container::-webkit-scrollbar-track {
+    background: #17181c;
+    border-radius: 10px;
+    border: 1px solid #30c5ff;
+}
+
+.buttons-container::-webkit-scrollbar-thumb, .news-container::-webkit-scrollbar-thumb {
+    background-color: #30c5ff;
+    border-radius: 20px;
+    border: 1px solid #17181c;
+    box-sizing: border-box;
 }
 
 footer {
@@ -43,16 +70,27 @@ footer .copyright:before {
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    margin: 0 10px;
+    margin: 40px 0px 0px 10px;
     background-color: #fff;
+    border: 3px solid #17181c;
 }
 
 .footer-rsschool {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin: 0 10px;
+    height: 40px;
+    padding: 2px;
+    margin: 40px 0px 0px 10px;
+    filter: invert(100%);
+    border: 3px solid #e7e7e8;
 }
+
+.footer-github:hover,
+.footer-rsschool:hover {
+    border-color: #3fcc59;
+    color: #69db7e;
+    box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+    transform: translateY(0.25em);
+}
+
 .links {
     display: flex;
     justify-content: center;
