@@ -1,7 +1,5 @@
 import AppLoader from './appLoader';
-import { GCallback, SourcesInterface, NewsInterface } from '../../types'
-import { Endpoint } from '../../enums/enums'
-
+import { GCallback, SourcesInterface, NewsInterface, Endpoint } from '../../types'
 
 class AppController extends AppLoader {
     public getSources(callback: GCallback<SourcesInterface>) {

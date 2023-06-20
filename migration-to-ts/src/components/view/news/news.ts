@@ -1,5 +1,6 @@
 import './news.css';
 import {NewsPick} from '../../../types/index'
+import placeholder from "./placeholder-news.jpg"
 
 class News {
     public draw(data: NewsPick[]): void {
@@ -17,7 +18,7 @@ class News {
             const newsMetaPhoto = newsClone.querySelector('.news__meta-photo');
 
             if (newsMetaPhoto instanceof HTMLElement) {
-                newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder'})`;
+                newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || placeholder})`;
                 newsClone.querySelector('.news__meta-author')!.textContent = item.author || item.name;
                 newsClone.querySelector('.news__meta-date')!.textContent = item.publishedAt
                 .slice(0, 10)

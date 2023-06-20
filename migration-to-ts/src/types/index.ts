@@ -10,22 +10,11 @@ type NewsType = {
     content: string;
   };
 
-type SourcesType = {
-    id: string;
-    name: string
-    author: string;
-    title: string;
-    description: string;
-    url: string;
-    urlToImage: string;
-    publishedAt: string;
-    content: string;
-}
 
 interface NewsInterface {
   status: string;
   totalResults: number;
-  articles: Array<SourcesType>;
+  articles: Array<NewsType>;
 }
 
 interface SourcesInterface {
@@ -52,4 +41,14 @@ interface LoaderEndpoint<T> {
 
 type NewsPick = Pick<NewsType, 'title' | 'description' | 'url' | 'urlToImage' | 'author' | 'name' | 'publishedAt'>;
 
-export {NewsType, SourcesType, NewsInterface, SourcesInterface, LoaderEndpoint, LoaderErrorHandler, GCallback, GSources, NewsPick}
+enum Endpoint {
+  Sources = 'sources',
+  everything = 'everything'
+}
+
+enum ErrorStatus {
+  Unauthorized = 401,
+  NotFound = 404
+}
+
+export {NewsType, NewsInterface, SourcesInterface, LoaderEndpoint, LoaderErrorHandler, GCallback, GSources, NewsPick, Endpoint, ErrorStatus}

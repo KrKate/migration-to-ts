@@ -1,5 +1,4 @@
-import {LoaderErrorHandler, LoaderEndpoint, GCallback, GSources } from '../../types'
-import { ErrorStatus } from '../../enums/enums';
+import {LoaderErrorHandler, LoaderEndpoint, GCallback, GSources, ErrorStatus} from '../../types';
 
 class Loader {
     readonly baseLink: string;
