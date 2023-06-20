@@ -1,7 +1,15 @@
 body {
+    position: relative;
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+    height: 100%;
+    max-height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 1fr 10vh;
+    margin: 0;
+    gap: 15px;
+    box-sizing: border-box;
 }
 
 header {
@@ -11,20 +19,23 @@ header {
 header h1 {
     font-size: 40px;
     font-weight: 800;
+    margin: 0;
 }
 
 main {
     display: flex;
-    justify-content: space-around;
+    max-height: 74vh;
 }
 
-.news-container, .buttons-container {
+.news-container {
     overflow-y: scroll;
-    width: 40%;
-    height: 90vh;
-    padding-right: 20px;
+    width: calc(100% - 300px);
 }
 
+.buttons-container {
+    width: 550px;
+    overflow-y: scroll;
+}
 
 .buttons-container::-webkit-scrollbar, .news-container::-webkit-scrollbar {
     width: 15px;
@@ -45,11 +56,10 @@ main {
 }
 
 footer {
-    height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    box-sizing: border-box;
 }
 footer .copyright {
     font-size: 14px;
@@ -67,17 +77,16 @@ footer .copyright:before {
 }
 
 .footer-github {
-    width: 2.5rem;
+    width: 2.1rem;
     border-radius: 50px;
-    margin: 40px 0px 0px 10px;
+    margin-right: 10px;
     background-color: #fff;
     border: 3px solid #17181c;
 }
 
 .footer-rsschool {
-    height: 2.5rem;
+    height: 2.1rem;
     padding: 2px;
-    margin: 40px 0px 0px 10px;
     filter: invert(100%);
     border: 3px solid #e7e7e8;
 }
