@@ -1,1 +1,1 @@
-# [migration-to-ts](https://krkate.github.io/migration-to-ts/)https://krkate.github.io/migration-to-ts/
+# [migration-to-ts](https://krkate.github.io/migration-to-ts/)
